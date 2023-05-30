@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline">
+    <h1 class="text-3xl font-bold underline text-gray-800">
         Hello World!
     </h1>
 </body>
