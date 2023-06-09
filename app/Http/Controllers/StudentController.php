@@ -11,8 +11,8 @@ class StudentController extends Controller
     //
     public function index()
     {
-        $data = Students::where('id', 1)->get();
 
-        return view('students.index', ['students' => $data]);
+
+        return view('students.index');
     }
 }
