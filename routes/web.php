@@ -22,9 +22,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/index', function () {
 //     return view('index');
 // });
-Route::get('/', [StudentController::class, 'index']);
+Route::get('/', [StudentController::class, 'index'])->middleware('auth');
 Route::get('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login/process', [UserController::class, 'process']);
+Route::post('/store', [UserController::class, 'store']);
+Route::post('/logout', [UserController::class, 'logout']);
+
 
 // Route::get('/', [UserController::class, 'index'])->name('login');
 // Route::get('/student', [StudentController::class, 'index'])->name('index');

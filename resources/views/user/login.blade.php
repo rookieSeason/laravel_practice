@@ -1,4 +1,5 @@
 @include('partials.header')
+<x-messages/>
     <header class="max-w-lg mx-auto my-10">
         <a href="#">
             <h1 class="text-4xl font-bold text-white text-center">Student Admin Login</h1>
@@ -10,14 +11,15 @@
             <p class="text-gray pt-2">Sign in to your account</p> 
         </section>
         <section class="mt-3">
-            <form action="" class="flex flex-col">
+            <form action="/login/process" method="POST" class="flex flex-col">
+                @csrf
                 <div class="mb-6 pt-3 bg-gray-200">
                     <label for="email" class="block gray-700 text-sm font-bold mb-2 ml-3">Email</label>
-                    <input type="email" class="bg-gray-200 rounded w-full  text-gray-800 focus:outline-none border-b-4 border-gray-800 px-3">
+                    <input type="email" name="email" class="bg-gray-200 rounded w-full  text-gray-800 focus:outline-none border-b-4 border-gray-800 px-3">
                 </div>
                 <div class="mb-6 pt-3 bg-gray-200">
                     <label for="password" class="block gray-700 text-sm font-bold mb-2 ml-3">Password</label>
-                    <input type="password" class="bg-gray-200 rounded w-full  text-gray-800 focus:outline-none border-b-4 border-gray-800 px-3">
+                    <input type="password" name="password" class="bg-gray-200 rounded w-full  text-gray-800 focus:outline-none border-b-4 border-gray-800 px-3">
                 </div>
                 <button class="bg-gray-800 text-white hover:bg-gray-100 hover:text-gray-800 font-bold py-2 rounded shadow-xl transition duration-200" type="submit">Sign In</button>
             </form>
