@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        Facades\View::composer('students.index', function (View $view) {
-            $view->with('students', Students::all());
-        });
+        // Facades\View::composer('students.index', function (View $view) {
+        //     $view->with('students', Students::all());
+        // });
     }
 }

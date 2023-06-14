@@ -23,11 +23,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 Route::get('/', [StudentController::class, 'index'])->middleware('auth');
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::get('/login', [UserController::class, 'login'])->name('login');
-Route::post('/login/process', [UserController::class, 'process']);
-Route::post('/store', [UserController::class, 'store']);
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/login/process', [UserController::class, 'process'])->name('process');
+Route::post('/store', [UserController::class, 'store'])->name('store');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/add/student', [StudentController::class, 'create'])->name('create');
+Route::post('/add/student', [StudentController::class, 'store'])->name('store');
+
+Route::get('/student/{id}', [StudentController::class, 'show'])->name('show');
+Route::put('/student/{id}', [StudentController::class, 'update'])->name('update');
+Route::delete('/student/{id}', [StudentController::class, 'destroy'])->name('destroy');
+
+
+
+
 
 
 // Route::get('/', [UserController::class, 'index'])->name('login');
