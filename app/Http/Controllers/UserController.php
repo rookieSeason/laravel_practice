@@ -36,8 +36,9 @@ class UserController extends Controller
 
             $request->session()->regenerate();
 
-            return view('students.index')->with('message', 'Welcome to Student List');
+            return redirect('/')->with('message', 'Welcome to Student List');
         }
+        return back()->withErrors(['email' => 'Login Failed'])->onlyInput('email');
     }
     public function register()
     {
@@ -66,6 +67,6 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('message', 'Sign Out Successfully!');
+        return redirect('/login')->with('message', 'Sign Out Successfully!');
     }
 }

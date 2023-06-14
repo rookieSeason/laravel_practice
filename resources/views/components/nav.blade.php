@@ -6,7 +6,7 @@
             </span>
         </a>
         <button @click="open = !open" class="md:hidden">
-            <i class="fa fa-bars fa-2x"></i>
+            <i class="fa-solid fa-bars fa-2x"></i>
         </button>
         <div x-show="open" class="w-full md:block md:w-auto" id="navbar-main">
             <x-items/>

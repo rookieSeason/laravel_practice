@@ -13,6 +13,9 @@
         <section class="mt-3">
             <form action="/login/process" method="POST" class="flex flex-col">
                 @csrf
+                 @error('email')
+                        <p class="text-red-500 text-sm p-1">{{$message}}</p>
+                    @enderror
                 <div class="mb-6 pt-3 bg-gray-200">
                     <label for="email" class="block gray-700 text-sm font-bold mb-2 ml-3">Email</label>
                     <input type="email" name="email" class="bg-gray-200 rounded w-full  text-gray-800 focus:outline-none border-b-4 border-gray-800 px-3">
@@ -26,7 +29,7 @@
 
         </section>
         <section>
-            <p class="mt-3">Haven't account? <a href="register" class="hover:text-gray-400 font-bold transition duration-200">Sign Up Here</a></p>
+            <p class="mt-3">Haven't account? <a href="/register" class="hover:text-gray-400 font-bold transition duration-200">Sign Up Here</a></p>
         </section>
 
 
