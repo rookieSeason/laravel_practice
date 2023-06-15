@@ -29,7 +29,7 @@
 
         </section>
         <section>
-            <p class="mt-3">Haven't account? <a href="/register" class="hover:text-gray-400 font-bold transition duration-200">Sign Up Here</a></p>
+            <p class="mt-3">Haven't account? <a href="{{url('register')}}" class="hover:text-gray-400 font-bold transition duration-200">Sign Up Here</a></p>
         </section>
 
 

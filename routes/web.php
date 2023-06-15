@@ -32,7 +32,7 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/add/student', [StudentController::class, 'create'])->name('create');
 Route::post('/add/student', [StudentController::class, 'store'])->name('store');
 
-Route::get('/student/{id}', [StudentController::class, 'show'])->name('show');
+Route::get('/student/{id}', [StudentController::class, 'show']);
 Route::put('/student/{id}', [StudentController::class, 'update'])->name('update');
 Route::delete('/student/{id}', [StudentController::class, 'destroy'])->name('destroy');
 

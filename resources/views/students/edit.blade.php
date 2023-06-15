@@ -5,7 +5,7 @@
             <h3 class="font-bold text-2xl text-center">Edit {{$student->first_name}} {{$student->last_name}} Info</h3>
         </section>
         <section class="mt-3">
-            <form action="/student/{{$student->id}}" method="POST" class="flex flex-col">
+            <form action="{{url('student/'. $student->id)}}" method="POST" class="flex flex-col">
                 @method('PUT')
                 @csrf
                 
@@ -50,9 +50,9 @@
                 </div>
                 <button class="bg-green-500 text-white hover:bg-green-300 hover:text-gray-900 font-bold py-2 rounded shadow-xl transition duration-200" type="submit">Update</button>
             </form>
-            <form action="/student/{{$student->id}}" method="POST">
-                @method('delete')
-                @csrf  
+            <form action="{{url('student/'.$student->id)}}" method="POST">
+                {{method_field('delete')}}
+                {{csrf_field()}}
                 <button class="w-full mt-3 bg-red-500 text-white hover:bg-red-300 hover:text-gray-900 font-bold py-2 rounded shadow-xl transition duration-200" type="submit">Delete</button>
 
             </form>

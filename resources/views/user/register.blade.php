@@ -46,7 +46,7 @@
 
         </section>
         <section>
-            <p class="mt-3 text-gray ">Already have an account? <a href="/login" class="hover:text-gray-400 font-bold transition duration-200">Sign In Here</a></p>
+            <p class="mt-3 text-gray ">Already have an account? <a href="{{url('login')}}" class="hover:text-gray-400 font-bold transition duration-200">Sign In Here</a></p>
         </section>
 
 

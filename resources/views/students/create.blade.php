@@ -4,7 +4,7 @@
             <h3 class="font-bold text-2xl text-center">Add New Student</h3>
         </section>
         <section class="mt-3">
-            <form action="/add/student" method="POST" class="flex flex-col">
+            <form action="{{url('add/student/')}}" method="POST" class="flex flex-col">
                 @csrf               
                 <div class="mb-6 pt-3 bg-gray-200">
                     <label for="first_name" class="block gray-700 text-sm font-bold mb-2 ml-3">First Name</label>

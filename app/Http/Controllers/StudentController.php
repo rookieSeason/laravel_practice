@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Students;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class StudentController extends Controller
@@ -45,23 +44,28 @@ class StudentController extends Controller
         return view('students.edit', ['student' => $data]);
     }
 
-    public function update(Request $request, Students $student)
+    public function update(Request $request, string $id)
     {
 
-        $validated = $request->validate([
-            'first_name' => ['required', 'min:4'],
-            'last_name' => ['required', 'min:4'],
-            'gender' => ['required'],
-            'age' => ['required'],
-            'email' => ['required', 'email'],
-        ]);
-        $student->update($validated);
+        // $validated = $request->validate([
+        //     'first_name' => ['required', 'min:4'],
+        //     'last_name' => ['required', 'min:4'],
+        //     'gender' => ['required'],
+        //     'age' => ['required'],
+        //     'email' => ['required', 'email'],
+        // ]);
+        // $student->update($validated);
+        $student = Students::find($id);
+        $input = $request->all();
+        $student->update($input);
         return redirect('/')->with('message', 'Data was successfully updated!');
     }
 
-    public function destroy(Students $student)
+    public function destroy(Request $request, string $id)
     {
-        $student->delete();
+        $student = Students::find($id);
+        $input = $request->all();
+        $student->delete($input);
 
         return redirect('/')->with('message', 'Deleted Successfully!');
     }

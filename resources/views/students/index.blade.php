@@ -6,7 +6,7 @@
     </header>    
     <section>
         <div class="rounded-lg">
-                    <div class="overflow-x-auto relative mx-auto">
+                    <div class="overflow-x-auto relative mx-auto rounded">
                         <table class="mx-auto w-96 text-sm text-left text-gray-800 mx-5 p-5">
                             <thead class="text-xs text-gray-700 uppercase bg-white border-b border-gray-800 ml-3">
                                 <tr>
@@ -26,7 +26,7 @@
                                     <td class="py-4 px-6">{{$student->email}}</td>
                                     <td class="py-4 px-6">{{$student->age}}</td>
                                     <td class="py-4 px-6">{{$student->gender}}</td>
-                                    <td class="py-4 px-6"> <a href="/student/{{$student->id}}" class="bg-gray-800 text-white px-4 py-2 hover:font-bold rounded">View</a></td>
+                                    <td class="py-4 px-6"> <a href="{{url('student/'. $student->id)}}" class="bg-gray-800 text-white px-4 py-2 hover:font-bold rounded">View</a></td>
                                 </tr>
                                 @endforeach
                                 
