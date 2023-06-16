@@ -46,18 +46,15 @@ class StudentController extends Controller
 
     public function update(Request $request, string $id)
     {
-
-        // $validated = $request->validate([
-        //     'first_name' => ['required', 'min:4'],
-        //     'last_name' => ['required', 'min:4'],
-        //     'gender' => ['required'],
-        //     'age' => ['required'],
-        //     'email' => ['required', 'email'],
-        // ]);
-        // $student->update($validated);
         $student = Students::find($id);
-        $input = $request->all();
-        $student->update($input);
+        $validated = $request->validate([
+            'first_name' => ['required', 'min:4'],
+            'last_name' => ['required', 'min:4'],
+            'gender' => ['required'],
+            'age' => ['required'],
+            'email' => ['required', 'email'],
+        ]);
+        $student->update($validated);
         return redirect('/')->with('message', 'Data was successfully updated!');
     }
 

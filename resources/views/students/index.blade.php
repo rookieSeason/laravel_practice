@@ -1,6 +1,6 @@
 @include('partials.header')
 <x-nav/>
-<x-messages/>
+
     <header class="max-w-lg mx-auto mt-5 mb-5">
             <h1 class="text-4xl font-bold text-white text-center">Student List</h1>
     </header>    
@@ -15,7 +15,7 @@
                                     <th scope="col" class="py-4 px-6">Email</th>
                                     <th scope="col" class="py-4 px-6">Age</th>
                                     <th scope="col" class="py-4 px-6">Gender</th>
-                                    <th scope="col"></th>
+                                    <th scope="col" class="py-4 px-6">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,6 +40,7 @@
         </div>
         
     </section>
+    <x-messages/>
 
 @include('partials.footer')
 
